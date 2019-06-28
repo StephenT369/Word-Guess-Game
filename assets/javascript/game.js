@@ -1,6 +1,19 @@
 //Stephen Thompson \^/
 
-var currWord = [sun, mercury, venus, earth, moon, mars, jupiter, saturn, uranus];
-var numGuess = 0;
-var numGuessRm = 15;
+var guessGame = {
+    
+    currWord:
+        ['sun', 'mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus']
+        [Math.floor(Math.random()*
+        ['sun', 'mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus']
+        .length)],
+    numGuess: 0,
+    numGuessRm: 15,
+
+};
+
+   
+    console.log(guessGame.currWord);
+
+
 
