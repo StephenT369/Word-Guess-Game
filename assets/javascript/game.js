@@ -52,10 +52,7 @@ var guessGame = {
                     guessGame.blkLet[l] = letter;
                 }
             }
-        }; /*else {
-                   guessGame.wrongLt.push(letter);
-                    guessGame.numGuessRm--;  
-                } if(guessGame.wrongLt; */
+        }; 
         
         if (!wordLt){
             if(!guessGame.wrongLt.includes(letter)){
