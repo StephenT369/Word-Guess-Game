@@ -64,14 +64,59 @@ var guessGame = {
         console.log(guessGame.blkLet);
     },
 
+    planetGuess: function () {
+        if (guessGame.randomLt === guessGame.words[0]){
+            document.getElementById('planet').src = './assets/images/sun.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[1]){
+            document.getElementById('planet').src = './assets/images/mercury.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[2]){
+            document.getElementById('planet').src = './assets/images/venus.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[3]){
+            document.getElementById('planet').src = './assets/images/earth.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[4]){
+            document.getElementById('planet').src = './assets/images/moon.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[5]){
+            document.getElementById('planet').src = './assets/images/mars.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[6]){
+            document.getElementById('planet').src = './assets/images/jupiter.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[7]){
+            document.getElementById('planet').src = './assets/images/saturn.jpg';
+        }
+
+        else if (guessGame.randomLt === guessGame.words[8]){
+            document.getElementById('planet').src = './assets/images/uranus.jpg';
+        }
+
+
+
+
+
+    },
+
     proGuess: function(){
         console.log('wins: ' + guessGame.wins + '| guesses left: ' + guessGame.numGuessRm );
 
         if(guessGame.wordSpt.toString() == guessGame.blkLet.toString()){
             guessGame.wins++;
+            guessGame.planetGuess();
             guessGame.restart();
             document.getElementById('show-wins').innerHTML = ' ' + guessGame.wins;
         } else if (guessGame.numGuessRm === 0) {
+            document.getElementById('planet').src = '';
             guessGame.restart();
         }
 
@@ -92,7 +137,7 @@ var guessGame = {
     },
 
     restart: function(){
-    
+        
     guessGame.wrongLt = [];
     guessGame.blkLet = [];
     guessGame.startGame();
