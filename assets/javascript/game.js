@@ -3,7 +3,7 @@
 var guessGame = {
 
     words: ['sun', 'mercury', 'venus', 'earth', 'moon', 'mars', 'jupiter', 'saturn', 'uranus'],
-    numGuessRm: 15,
+    numGuessRm: 0,
     wins: 0,
     blanks: 0,
     randomLt: '',
@@ -18,11 +18,15 @@ var guessGame = {
             
         guessGame.blanks = guessGame.wordSpt.length;
         
+        guessGame.numGuessRm = guessGame.wordSpt.length;
+
         for (var l = 0; l < guessGame.blanks; l++) {
             guessGame.blkLet.push("_");
         }
         
         document.getElementById('current-word').innerHTML = ' ' + guessGame.blkLet.join('  ');
+
+        document.getElementById('guesses-remaining').innerHTML = ' ' + guessGame.numGuessRm;
 
         console.log(guessGame.randomLt);
         console.log(guessGame.wordSpt);
@@ -48,11 +52,16 @@ var guessGame = {
                     guessGame.blkLet[l] = letter;
                 }
             }
-        }
+        }; /*else {
+                   guessGame.wrongLt.push(letter);
+                    guessGame.numGuessRm--;  
+                } if(guessGame.wrongLt; */
         
-        else {
-            guessGame.wrongLt.push(letter);
-            guessGame.numGuessRm--;
+        if (!wordLt){
+            if(!guessGame.wrongLt.includes(letter)){
+                guessGame.wrongLt.push(letter);
+                guessGame.numGuessRm--;
+            };
         };
 
         console.log(guessGame.blkLet);
@@ -86,7 +95,7 @@ var guessGame = {
     },
 
     restart: function(){
-    guessGame.numGuessRm = 15;
+    
     guessGame.wrongLt = [];
     guessGame.blkLet = [];
     guessGame.startGame();
